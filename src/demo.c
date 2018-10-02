@@ -241,8 +241,10 @@ void *detect_in_thread(void *ptr)
             } 
             */    
 
-            draw_box_width_relative_label(display, dets[i].bbox, linewidth, color, labelstr, demo_alphabet);
-
+            if (yolo_detects_target && classifier_detects_target) {
+            	draw_box_width_relative_label(display, dets[i].bbox, linewidth, color, labelstr, demo_alphabet);
+            }
+            	
         }
     }
     //---------------
